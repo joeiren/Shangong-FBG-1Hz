@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFF556EB-B409-41FE-939C-32DDD5F32B63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SG.PhysicDataHandle</RootNamespace>
+    <AssemblyName>SG.PhysicDataHandle</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HandleEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Corp.ShanGong.FiberInstrument.BizCore\Corp.ShanGong.FiberInstrument.BizCore.csproj">
+      <Project>{ae55845e-13d2-4a71-bd36-e034c308b79b}</Project>
+      <Name>Corp.ShanGong.FiberInstrument.BizCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corp.ShanGong.FiberInstrument.Common\Corp.ShanGong.FiberInstrument.Common.csproj">
+      <Project>{ed8e9564-d7a6-4132-8ad7-e094b443c229}</Project>
+      <Name>Corp.ShanGong.FiberInstrument.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corp.ShanGong.FiberInstrument.IBizSpec\Corp.ShanGong.FiberInstrument.IBizSpec.csproj">
+      <Project>{2bf7d5ac-8e60-4448-a5b0-0169bde4ab30}</Project>
+      <Name>Corp.ShanGong.FiberInstrument.IBizSpec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corp.ShanGong.FiberInstrument.ProjectSpec\Corp.ShanGong.FiberInstrument.ProjectSpec.csproj">
+      <Project>{ef8dcf5f-ee2c-40d7-89f9-236665c6aaeb}</Project>
+      <Name>Corp.ShanGong.FiberInstrument.ProjectSpec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corp.ShanGong.FiberInstrument.Setting\Corp.ShanGong.FiberInstrument.Setting.csproj">
+      <Project>{ae3b9264-d797-47f8-a0a7-28cf998094fb}</Project>
+      <Name>Corp.ShanGong.FiberInstrument.Setting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalModel\GlobalModel.vbproj">
+      <Project>{e5db9c3b-bcea-485c-bb27-9ad970a532c5}</Project>
+      <Name>GlobalModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

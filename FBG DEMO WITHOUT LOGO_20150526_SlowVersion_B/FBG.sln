@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FBG", "FBG.vbproj", "{FE50F7FE-74E3-4D7A-BAC8-DDE04D5DEE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SG.PhysicDataHandle", "..\FBG_SG\SG.PhysicDataHandle\SG.PhysicDataHandle.csproj", "{AFF556EB-B409-41FE-939C-32DDD5F32B63}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GlobalModel", "..\FBG_SG\GlobalModel\GlobalModel.vbproj", "{E5DB9C3B-BCEA-485C-BB27-9AD970A532C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.BizCore", "..\FBG_SG\Corp.ShanGong.FiberInstrument.BizCore\Corp.ShanGong.FiberInstrument.BizCore.csproj", "{AE55845E-13D2-4A71-BD36-E034C308B79B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.Common", "..\FBG_SG\Corp.ShanGong.FiberInstrument.Common\Corp.ShanGong.FiberInstrument.Common.csproj", "{ED8E9564-D7A6-4132-8AD7-E094B443C229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.IBizSpec", "..\FBG_SG\Corp.ShanGong.FiberInstrument.IBizSpec\Corp.ShanGong.FiberInstrument.IBizSpec.csproj", "{2BF7D5AC-8E60-4448-A5B0-0169BDE4AB30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.Model", "..\FBG_SG\Corp.ShanGong.FiberInstrument.Model\Corp.ShanGong.FiberInstrument.Model.csproj", "{BB42C894-8087-4DBB-A6EE-BE6C91330F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.Net", "..\FBG_SG\Corp.ShanGong.FiberInstrument.Net\Corp.ShanGong.FiberInstrument.Net.csproj", "{6ACE9F0A-2F7E-4421-8DA4-5711F4D55628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.ProjectSpec", "..\FBG_SG\Corp.ShanGong.FiberInstrument.ProjectSpec\Corp.ShanGong.FiberInstrument.ProjectSpec.csproj", "{EF8DCF5F-EE2C-40D7-89F9-236665C6AAEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corp.ShanGong.FiberInstrument.Setting", "..\FBG_SG\Corp.ShanGong.FiberInstrument.Setting\Corp.ShanGong.FiberInstrument.Setting.csproj", "{AE3B9264-D797-47F8-A0A7-28CF998094FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE50F7FE-74E3-4D7A-BAC8-DDE04D5DEE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE50F7FE-74E3-4D7A-BAC8-DDE04D5DEE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE50F7FE-74E3-4D7A-BAC8-DDE04D5DEE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE50F7FE-74E3-4D7A-BAC8-DDE04D5DEE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF556EB-B409-41FE-939C-32DDD5F32B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF556EB-B409-41FE-939C-32DDD5F32B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF556EB-B409-41FE-939C-32DDD5F32B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF556EB-B409-41FE-939C-32DDD5F32B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DB9C3B-BCEA-485C-BB27-9AD970A532C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DB9C3B-BCEA-485C-BB27-9AD970A532C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DB9C3B-BCEA-485C-BB27-9AD970A532C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DB9C3B-BCEA-485C-BB27-9AD970A532C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE55845E-13D2-4A71-BD36-E034C308B79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE55845E-13D2-4A71-BD36-E034C308B79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE55845E-13D2-4A71-BD36-E034C308B79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE55845E-13D2-4A71-BD36-E034C308B79B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8E9564-D7A6-4132-8AD7-E094B443C229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8E9564-D7A6-4132-8AD7-E094B443C229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8E9564-D7A6-4132-8AD7-E094B443C229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8E9564-D7A6-4132-8AD7-E094B443C229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF7D5AC-8E60-4448-A5B0-0169BDE4AB30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF7D5AC-8E60-4448-A5B0-0169BDE4AB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF7D5AC-8E60-4448-A5B0-0169BDE4AB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF7D5AC-8E60-4448-A5B0-0169BDE4AB30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB42C894-8087-4DBB-A6EE-BE6C91330F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB42C894-8087-4DBB-A6EE-BE6C91330F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB42C894-8087-4DBB-A6EE-BE6C91330F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB42C894-8087-4DBB-A6EE-BE6C91330F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ACE9F0A-2F7E-4421-8DA4-5711F4D55628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ACE9F0A-2F7E-4421-8DA4-5711F4D55628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ACE9F0A-2F7E-4421-8DA4-5711F4D55628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ACE9F0A-2F7E-4421-8DA4-5711F4D55628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8DCF5F-EE2C-40D7-89F9-236665C6AAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8DCF5F-EE2C-40D7-89F9-236665C6AAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8DCF5F-EE2C-40D7-89F9-236665C6AAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8DCF5F-EE2C-40D7-89F9-236665C6AAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3B9264-D797-47F8-A0A7-28CF998094FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3B9264-D797-47F8-A0A7-28CF998094FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3B9264-D797-47F8-A0A7-28CF998094FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3B9264-D797-47F8-A0A7-28CF998094FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
