@@ -83,11 +83,10 @@ Partial Class frmMain
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.iSaveData = New DevExpress.XtraBars.BarButtonItem()
         Me.iScanPower = New DevExpress.XtraBars.BarEditItem()
-        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.eChRange = New DevExpress.XtraBars.BarEditItem()
         Me.RepositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
         Me.iDebugMode = New DevExpress.XtraBars.BarEditItem()
-        Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.iGroupQuery = New DevExpress.XtraBars.BarEditItem()
         Me.ribbonImageCollectionLarge = New DevExpress.Utils.ImageCollection(Me.components)
         Me.homeRibbonPage = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -100,10 +99,11 @@ Partial Class frmMain
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.helpRibbonPage = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.helpRibbonPageGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemSpinEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
-        Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.ribbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.gcData = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -158,14 +158,14 @@ Partial Class frmMain
         CType(Me.buttonEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonImageCollectionLarge, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,14 +198,14 @@ Partial Class frmMain
         'splitContainerControl
         '
         Me.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.splitContainerControl.Location = New System.Drawing.Point(0, 155)
+        Me.splitContainerControl.Location = New System.Drawing.Point(0, 147)
         Me.splitContainerControl.Name = "splitContainerControl"
-        Me.splitContainerControl.Padding = New System.Windows.Forms.Padding(6)
+        Me.splitContainerControl.Padding = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.splitContainerControl.Panel1.Controls.Add(Me.navBarControl)
         Me.splitContainerControl.Panel1.Text = "Panel1"
         Me.splitContainerControl.Panel2.Controls.Add(Me.LayoutControl1)
         Me.splitContainerControl.Panel2.Text = "Panel2"
-        Me.splitContainerControl.Size = New System.Drawing.Size(1193, 561)
+        Me.splitContainerControl.Size = New System.Drawing.Size(1193, 476)
         Me.splitContainerControl.SplitterPosition = 445
         Me.splitContainerControl.TabIndex = 1
         Me.splitContainerControl.Text = "splitContainerControl1"
@@ -222,7 +222,7 @@ Partial Class frmMain
         Me.navBarControl.Name = "navBarControl"
         Me.navBarControl.OptionsNavPane.ExpandedWidth = 445
         Me.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar
-        Me.navBarControl.Size = New System.Drawing.Size(445, 549)
+        Me.navBarControl.Size = New System.Drawing.Size(445, 466)
         Me.navBarControl.SmallImages = Me.navbarImageCollection
         Me.navBarControl.StoreDefaultPaintStyleName = True
         Me.navBarControl.TabIndex = 1
@@ -257,22 +257,22 @@ Partial Class frmMain
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(2, 17)
+        Me.LabelControl8.Location = New System.Drawing.Point(2, 15)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(25, 22)
+        Me.LabelControl8.Size = New System.Drawing.Size(21, 19)
         Me.LabelControl8.TabIndex = 40
         Me.LabelControl8.Text = "SN"
         '
         'txtSN
         '
         Me.txtSN.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtSN.Location = New System.Drawing.Point(43, 15)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSN.Location = New System.Drawing.Point(43, 13)
         Me.txtSN.MenuManager = Me.ribbonControl
         Me.txtSN.Name = "txtSN"
         Me.txtSN.Properties.Appearance.Font = New System.Drawing.Font("Lucida Console", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSN.Properties.Appearance.Options.UseFont = True
-        Me.txtSN.Size = New System.Drawing.Size(387, 24)
+        Me.txtSN.Size = New System.Drawing.Size(387, 20)
         Me.txtSN.TabIndex = 41
         '
         'ribbonControl
@@ -290,7 +290,7 @@ Partial Class frmMain
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.homeRibbonPage, Me.helpRibbonPage})
         Me.ribbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1, Me.RepositoryItemCheckEdit2, Me.RepositoryItemTextEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemCheckEdit3, Me.RepositoryItemSpinEdit2, Me.RepositoryItemComboBox1, Me.RepositoryItemCheckEdit4})
         Me.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
-        Me.ribbonControl.Size = New System.Drawing.Size(1193, 155)
+        Me.ribbonControl.Size = New System.Drawing.Size(1193, 147)
         Me.ribbonControl.StatusBar = Me.ribbonStatusBar
         Me.ribbonControl.Toolbar.ItemLinks.Add(Me.iLoadData)
         Me.ribbonControl.Toolbar.ItemLinks.Add(Me.iHelp)
@@ -310,21 +310,21 @@ Partial Class frmMain
         Me.popupControlContainer2.Appearance.Options.UseBackColor = True
         Me.popupControlContainer2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.popupControlContainer2.Controls.Add(Me.buttonEdit)
-        Me.popupControlContainer2.Location = New System.Drawing.Point(238, 289)
+        Me.popupControlContainer2.Location = New System.Drawing.Point(238, 253)
         Me.popupControlContainer2.Name = "popupControlContainer2"
         Me.popupControlContainer2.Ribbon = Me.ribbonControl
-        Me.popupControlContainer2.Size = New System.Drawing.Size(118, 28)
+        Me.popupControlContainer2.Size = New System.Drawing.Size(118, 24)
         Me.popupControlContainer2.TabIndex = 7
         Me.popupControlContainer2.Visible = False
         '
         'buttonEdit
         '
         Me.buttonEdit.EditValue = "Some Text"
-        Me.buttonEdit.Location = New System.Drawing.Point(3, 5)
+        Me.buttonEdit.Location = New System.Drawing.Point(3, 4)
         Me.buttonEdit.MenuManager = Me.ribbonControl
         Me.buttonEdit.Name = "buttonEdit"
         Me.buttonEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.buttonEdit.Size = New System.Drawing.Size(100, 22)
+        Me.buttonEdit.Size = New System.Drawing.Size(100, 20)
         Me.buttonEdit.TabIndex = 0
         '
         'iLoadData
@@ -578,12 +578,11 @@ Partial Class frmMain
         Me.iScanPower.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate
         Me.iScanPower.Name = "iScanPower"
         '
-        'RepositoryItemCheckEdit2
+        'RepositoryItemCheckEdit4
         '
-        Me.RepositoryItemCheckEdit2.AutoHeight = False
-        Me.RepositoryItemCheckEdit2.Caption = "Check"
-        Me.RepositoryItemCheckEdit2.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Style1
-        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
+        Me.RepositoryItemCheckEdit4.AutoHeight = False
+        Me.RepositoryItemCheckEdit4.Caption = "Check"
+        Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
         '
         'eChRange
         '
@@ -610,13 +609,6 @@ Partial Class frmMain
         Me.iDebugMode.Id = 95
         Me.iDebugMode.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate
         Me.iDebugMode.Name = "iDebugMode"
-        '
-        'RepositoryItemCheckEdit3
-        '
-        Me.RepositoryItemCheckEdit3.AutoHeight = False
-        Me.RepositoryItemCheckEdit3.Caption = "Check"
-        Me.RepositoryItemCheckEdit3.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Style1
-        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
         '
         'iGroupQuery
         '
@@ -713,10 +705,24 @@ Partial Class frmMain
         Me.helpRibbonPageGroup.Name = "helpRibbonPageGroup"
         Me.helpRibbonPageGroup.Text = "Help"
         '
+        'RepositoryItemCheckEdit2
+        '
+        Me.RepositoryItemCheckEdit2.AutoHeight = False
+        Me.RepositoryItemCheckEdit2.Caption = "Check"
+        Me.RepositoryItemCheckEdit2.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Style1
+        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
+        '
         'RepositoryItemTextEdit1
         '
         Me.RepositoryItemTextEdit1.AutoHeight = False
         Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
+        '
+        'RepositoryItemCheckEdit3
+        '
+        Me.RepositoryItemCheckEdit3.AutoHeight = False
+        Me.RepositoryItemCheckEdit3.Caption = "Check"
+        Me.RepositoryItemCheckEdit3.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Style1
+        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
         '
         'RepositoryItemSpinEdit2
         '
@@ -730,16 +736,10 @@ Partial Class frmMain
         Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
-        'RepositoryItemCheckEdit4
-        '
-        Me.RepositoryItemCheckEdit4.AutoHeight = False
-        Me.RepositoryItemCheckEdit4.Caption = "Check"
-        Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
-        '
         'ribbonStatusBar
         '
         Me.ribbonStatusBar.ItemLinks.Add(Me.siInfo)
-        Me.ribbonStatusBar.Location = New System.Drawing.Point(0, 716)
+        Me.ribbonStatusBar.Location = New System.Drawing.Point(0, 623)
         Me.ribbonStatusBar.Name = "ribbonStatusBar"
         Me.ribbonStatusBar.Ribbon = Me.ribbonControl
         Me.ribbonStatusBar.Size = New System.Drawing.Size(1193, 31)
@@ -747,17 +747,17 @@ Partial Class frmMain
         'gcData
         '
         Me.gcData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         GridLevelNode1.RelationName = "Level1"
         Me.gcData.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
-        Me.gcData.Location = New System.Drawing.Point(0, 249)
+        Me.gcData.Location = New System.Drawing.Point(0, 218)
         Me.gcData.LookAndFeel.SkinName = "Visual Studio 2013 Blue"
         Me.gcData.LookAndFeel.UseDefaultLookAndFeel = False
         Me.gcData.MainView = Me.GridView1
         Me.gcData.Name = "gcData"
         Me.gcData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.gcData.Size = New System.Drawing.Size(430, 338)
+        Me.gcData.Size = New System.Drawing.Size(430, 374)
         Me.gcData.TabIndex = 36
         Me.gcData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -834,7 +834,7 @@ Partial Class frmMain
         'GroupControl2
         '
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupControl2.Appearance.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControl2.Appearance.Options.UseFont = True
         Me.GroupControl2.AppearanceCaption.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -843,38 +843,38 @@ Partial Class frmMain
         Me.GroupControl2.Controls.Add(Me.cbGrating)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.cbChannel)
-        Me.GroupControl2.Location = New System.Drawing.Point(1, 159)
+        Me.GroupControl2.Location = New System.Drawing.Point(1, 139)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(429, 73)
+        Me.GroupControl2.Size = New System.Drawing.Size(429, 64)
         Me.GroupControl2.TabIndex = 35
         Me.GroupControl2.Text = "Frequency"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(185, 38)
+        Me.LabelControl3.Location = New System.Drawing.Point(185, 33)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(43, 17)
+        Me.LabelControl3.Size = New System.Drawing.Size(36, 15)
         Me.LabelControl3.TabIndex = 33
         Me.LabelControl3.Text = "Grating"
         '
         'cbGrating
         '
         Me.cbGrating.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbGrating.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbGrating.FormattingEnabled = True
-        Me.cbGrating.Location = New System.Drawing.Point(237, 35)
+        Me.cbGrating.Location = New System.Drawing.Point(237, 31)
         Me.cbGrating.Name = "cbGrating"
-        Me.cbGrating.Size = New System.Drawing.Size(182, 23)
+        Me.cbGrating.Size = New System.Drawing.Size(182, 20)
         Me.cbGrating.TabIndex = 32
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(10, 38)
+        Me.LabelControl6.Location = New System.Drawing.Point(10, 33)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(21, 17)
+        Me.LabelControl6.Size = New System.Drawing.Size(17, 15)
         Me.LabelControl6.TabIndex = 22
         Me.LabelControl6.Text = "CH"
         '
@@ -882,65 +882,65 @@ Partial Class frmMain
         '
         Me.cbChannel.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbChannel.FormattingEnabled = True
-        Me.cbChannel.Location = New System.Drawing.Point(42, 35)
+        Me.cbChannel.Location = New System.Drawing.Point(42, 31)
         Me.cbChannel.Name = "cbChannel"
-        Me.cbChannel.Size = New System.Drawing.Size(134, 23)
+        Me.cbChannel.Size = New System.Drawing.Size(134, 20)
         Me.cbChannel.TabIndex = 31
         '
         'GroupControl1
         '
         Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupControl1.AppearanceCaption.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControl1.AppearanceCaption.Options.UseFont = True
         Me.GroupControl1.Controls.Add(Me.cbCom)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.cbBaud)
-        Me.GroupControl1.Location = New System.Drawing.Point(1, 58)
+        Me.GroupControl1.Location = New System.Drawing.Point(1, 51)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(429, 90)
+        Me.GroupControl1.Size = New System.Drawing.Size(429, 79)
         Me.GroupControl1.TabIndex = 34
         Me.GroupControl1.Text = "COM"
         '
         'cbCom
         '
         Me.cbCom.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbCom.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCom.FormattingEnabled = True
-        Me.cbCom.Location = New System.Drawing.Point(127, 26)
+        Me.cbCom.Location = New System.Drawing.Point(127, 23)
         Me.cbCom.Name = "cbCom"
-        Me.cbCom.Size = New System.Drawing.Size(292, 23)
+        Me.cbCom.Size = New System.Drawing.Size(292, 20)
         Me.cbCom.TabIndex = 30
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(10, 30)
+        Me.LabelControl1.Location = New System.Drawing.Point(10, 26)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(57, 17)
+        Me.LabelControl1.Size = New System.Drawing.Size(47, 15)
         Me.LabelControl1.TabIndex = 17
         Me.LabelControl1.Text = "Com Port"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(10, 63)
+        Me.LabelControl2.Location = New System.Drawing.Point(10, 55)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(63, 17)
+        Me.LabelControl2.Size = New System.Drawing.Size(50, 15)
         Me.LabelControl2.TabIndex = 18
         Me.LabelControl2.Text = "Baud Rate"
         '
         'cbBaud
         '
         Me.cbBaud.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbBaud.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBaud.FormattingEnabled = True
-        Me.cbBaud.Location = New System.Drawing.Point(127, 59)
+        Me.cbBaud.Location = New System.Drawing.Point(127, 52)
         Me.cbBaud.Name = "cbBaud"
-        Me.cbBaud.Size = New System.Drawing.Size(292, 23)
+        Me.cbBaud.Size = New System.Drawing.Size(292, 20)
         Me.cbBaud.TabIndex = 29
         '
         'inboxItem
@@ -1015,7 +1015,7 @@ Partial Class frmMain
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(731, 549)
+        Me.LayoutControl1.Size = New System.Drawing.Size(731, 466)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -1031,7 +1031,7 @@ Partial Class frmMain
         XyDiagram1.AxisY.Title.Visible = True
         XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
         Me.ChartPower.Diagram = XyDiagram1
-        Me.ChartPower.Location = New System.Drawing.Point(12, 279)
+        Me.ChartPower.Location = New System.Drawing.Point(12, 237)
         Me.ChartPower.Name = "ChartPower"
         Me.ChartPower.PaletteName = "Default"
         PointSeriesLabel1.LineLength = 20
@@ -1047,7 +1047,7 @@ Partial Class frmMain
         Series1.View = PointSeriesView1
         Me.ChartPower.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
         Me.ChartPower.SeriesTemplate.View = PointSeriesView2
-        Me.ChartPower.Size = New System.Drawing.Size(707, 258)
+        Me.ChartPower.Size = New System.Drawing.Size(707, 217)
         Me.ChartPower.TabIndex = 4
         '
         'ChartWavelength
@@ -1075,7 +1075,7 @@ Partial Class frmMain
         Me.ChartWavelength.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series2, Series3}
         SwiftPlotSeriesView3.LineStyle.Thickness = 2
         Me.ChartWavelength.SeriesTemplate.View = SwiftPlotSeriesView3
-        Me.ChartWavelength.Size = New System.Drawing.Size(707, 263)
+        Me.ChartWavelength.Size = New System.Drawing.Size(707, 221)
         Me.ChartWavelength.TabIndex = 0
         '
         'LayoutControlGroup1
@@ -1086,7 +1086,7 @@ Partial Class frmMain
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(731, 549)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(731, 466)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -1096,7 +1096,7 @@ Partial Class frmMain
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(711, 267)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(711, 225)
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
@@ -1106,9 +1106,9 @@ Partial Class frmMain
         '
         Me.LayoutControlItem2.Control = Me.ChartPower
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 267)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 225)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(711, 262)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(711, 221)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -1124,7 +1124,6 @@ Partial Class frmMain
         'BarStaticItem2
         '
         Me.BarStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
-        'Me.BarStaticItem2.Caption = "珠海市光辰科技有限公司 www.arcopt.com"
         Me.BarStaticItem2.Id = 88
         Me.BarStaticItem2.ItemAppearance.Normal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BarStaticItem2.ItemAppearance.Normal.Options.UseFont = True
@@ -1151,9 +1150,9 @@ Partial Class frmMain
         'frmMain
         '
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1193, 747)
+        Me.ClientSize = New System.Drawing.Size(1193, 654)
         Me.Controls.Add(Me.splitContainerControl)
         Me.Controls.Add(Me.popupControlContainer2)
         Me.Controls.Add(Me.ribbonStatusBar)
@@ -1178,14 +1177,14 @@ Partial Class frmMain
         CType(Me.buttonEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ribbonImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ribbonImageCollectionLarge, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()

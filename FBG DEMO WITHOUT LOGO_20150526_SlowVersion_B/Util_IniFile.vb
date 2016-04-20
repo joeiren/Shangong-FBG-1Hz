@@ -9,8 +9,8 @@ Namespace Opring.Utils
         Private fileName As String
         Private fileContents As String = Nothing
 
-        Public Sub New(ByVal fileName As String)
-            Me.fileName = fileName
+        Public Sub New(ByVal fileNa As String)
+            Me.fileName = fileNa
 
             If File.Exists(fileName) Then
                 Dim reader As StreamReader = File.OpenText(fileName)
@@ -71,13 +71,17 @@ Namespace Opring.Utils
 
         Public Function ReadIni(ByVal section As String, ByVal keyword As String, ByVal defaultValue As String) As String
             Dim str As String = LSet(str, 256)
+            Dim fileNameHolder = fileName
             GetPrivateProfileString(section, keyword, defaultValue, str, Len(str), fileName)
+            fileName = fileNameHolder
             Return Microsoft.VisualBasic.Left(str, InStr(str, Chr(0)) - 1)
         End Function
 
         '写入Ini文件内容
         Public Function WriteIni(ByVal Section As String, ByVal keyword As String, ByVal defaultvalue As String) As Long
+            Dim fileNameHolder = fileName
             WriteIni = WritePrivateProfileString(Section, keyword, defaultvalue, fileName)
+            fileName = fileNameHolder
         End Function
 
 

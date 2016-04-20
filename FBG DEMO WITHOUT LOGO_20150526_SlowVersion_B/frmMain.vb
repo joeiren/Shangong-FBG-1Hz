@@ -32,6 +32,16 @@ Public Class frmMain
         Me.InitChart()
         DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm()
 
+        Dim auto = mIniFile.ReadIni("Sweep", "SweepAuto", 0)
+        If auto = "1" Then
+            Dim connected = ConnectAutomation()
+            If connected Then
+                StartSweepAutomation1()
+            Else
+                MessageBox.Show("Failed to connect to Tunable Laser Module", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
+        
     End Sub
 
     Private Sub frmMain_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
@@ -99,20 +109,44 @@ Public Class frmMain
     End Sub
 
     Private Sub iConnect_ItemClick(sender As Object, e As ItemClickEventArgs) Handles iConnect.ItemClick
+'        Dim success As Boolean
+'
+'        mInstFBG = New Inst_FBGDemodulator()
+'        success = mInstFBG.Initialize(cbCom.Text, cbBaud.Text, mComParity, mComStopBit, mComTimeOut, False)
+'        If Not success Then
+'            MessageBox.Show("Failed to connect to Tunable Laser Module", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+'            Return
+'        End If
+'        MessageBox.Show("TLM is connected!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+'        iConnect.Enabled = False
+'        txtSN.Text = mInstFBG.SN
+        Dim success = ConnectAutomation()
+        If success Then
+            MessageBox.Show("TLM is connected!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Failed to connect to Tunable Laser Module", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    End Sub
+
+    Private Function ConnectAutomation() As Boolean
         Dim success As Boolean
 
         mInstFBG = New Inst_FBGDemodulator()
         success = mInstFBG.Initialize(cbCom.Text, cbBaud.Text, mComParity, mComStopBit, mComTimeOut, False)
         If Not success Then
-            MessageBox.Show("Failed to connect to Tunable Laser Module", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
+            'MessageBox.Show("Failed to connect to Tunable Laser Module", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
         End If
-        MessageBox.Show("TLM is connected!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         iConnect.Enabled = False
         txtSN.Text = mInstFBG.SN
+        Return True
+    End Function
 
 
-    End Sub
+
+
     Private Sub iDisconnect_ItemClick(sender As Object, e As ItemClickEventArgs) Handles iDisconnect.ItemClick
         If mInstFBG IsNot Nothing Then
             mInstFBG.Close()
@@ -120,7 +154,8 @@ Public Class frmMain
         End If
         iConnect.Enabled = True
     End Sub
-    Private Sub iStartSweep_ItemClick(sender As Object, e As ItemClickEventArgs) Handles iStartSweep.ItemClick
+
+    Private Function StartSweepAutomation1() As Boolean
         Dim success As Boolean
         ReDim mWavelength(MaxChannelCount - 1)
         ReDim mPower(MaxChannelCount - 1)
@@ -174,14 +209,82 @@ Public Class frmMain
         End If
 
         If mInstFBG Is Nothing Then
-            MessageBox.Show("Please connect to module first!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+            ' MessageBox.Show("Please connect to module first!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
         Else
             siInfo.Caption = "Sweep Running..."
             ChartWavelength.Series.Clear()
             timerSweep.Interval = 1000 * mSweepInterval
             timerSweep.Enabled = True
+            Return True
         End If
+    End Function
+    Private Sub iStartSweep_ItemClick(sender As Object, e As ItemClickEventArgs) Handles iStartSweep.ItemClick
+        Dim success = StartSweepAutomation1()
+        If Not success Then
+            MessageBox.Show("Please connect to module first!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        '        Dim success As Boolean
+        '        ReDim mWavelength(MaxChannelCount - 1)
+        '        ReDim mPower(MaxChannelCount - 1)
+        '        mSweepStartTime = Now
+        '        mSweepInterval = mIniFile.ReadIni("Sweep", "TimeInterval", 2)
+        '        mSaveInterval = mIniFile.ReadIni("Sweep", "TimeSaveInterval", 2)
+        '        mScanChannels = eChRange.EditValue
+        '        mIsGroupQuery = iGroupQuery.EditValue
+        '        If mScanChannels < 1 Then mScanChannels = 1
+        '        'If mScanChannels > MaxChannelCount Then mScanChannels = MaxChannelCount
+        '        MaxChannelCount = mScanChannels
+        '
+        '        mEntry.SetMaxChannelCount(MaxChannelCount)
+        '        ReDim mChannelRawData(MaxChannelCount - 1)
+        '        ReDim mDemulatorData(MaxChannelCount - 1)
+        '
+        '        cbChannel.Items.Clear()
+        '        For i As Integer = 1 To MaxChannelCount
+        '            cbChannel.Items.Add(i)
+        '        Next
+        '
+        '        'make sure first reading will be saved
+        '        mLastSaveTime = Now.Subtract(New TimeSpan(0, 0, mSaveInterval + 1))
+        '
+        '        For i As Integer = 0 To mDemulatorData.Length - 1
+        '            mDemulatorData(i).SampleTime = New List(Of Date)
+        '            mDemulatorData(i).GratingWavelength = Nothing
+        '            mDemulatorData(i).GratingPower = Nothing
+        '        Next
+        '        If mSeriesScan IsNot Nothing Then
+        '            mSeriesScan.Points.Clear()
+        '            mSeriesScan = Nothing
+        '        End If
+        '
+        '        If IsNumeric(cbChannel.Text) Then
+        '            mChannel = cbChannel.Text
+        '        Else
+        '            mChannel = 1
+        '        End If
+        '        If IsNumeric(cbGrating.Text) Then
+        '            mGrating = cbGrating.Text
+        '        Else
+        '            mGrating = 1
+        '        End If
+        '
+        '        mIsDebugMode = iDebugMode.EditValue
+        '        If mIsDebugMode Then
+        '            ShowChartwavelength(False)
+        '        Else
+        '            ShowChartwavelength(True)
+        '        End If
+        '
+        '        If mInstFBG Is Nothing Then
+        '            MessageBox.Show("Please connect to module first!", "FBG", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '
+        '        Else
+        '            siInfo.Caption = "Sweep Running..."
+        '            ChartWavelength.Series.Clear()
+        '            timerSweep.Interval = 1000 * mSweepInterval
+        '            timerSweep.Enabled = True
+        '        End If
     End Sub
 
     Private Sub iStopSweep_ItemClick(sender As Object, e As ItemClickEventArgs) Handles iStopSweep.ItemClick
@@ -807,7 +910,7 @@ Public Class frmMain
 
     Private mIsGroupQuery As Boolean
 
-    Private MaxChannelCount As Integer = 32
+    Private MaxChannelCount As Integer = 16
 
     Dim mEntry As New HandleEntry
 #End Region
