@@ -81,9 +81,10 @@ Public Class frmMain
         mComTimeOut = mIniFile.ReadIni("COM", "TimeOut", 3)
 
         value = mIniFile.ReadIni("Sweep", "ScanPower", 1)
-        iScanPower.EditValue = value = 1
+        iScanPower.EditValue = value
         value = mIniFile.ReadIni("Sweep", "ScanChannels", MaxChannelCount)
         eChRange.EditValue = value
+
         MaxChannelCount = value
         cbChannel.Items.Clear()
         For i As Integer = 1 To MaxChannelCount
@@ -91,7 +92,7 @@ Public Class frmMain
         Next
         cbChannel.Text = 1
         cbGrating.Items.Clear()
-        For i As Integer = 1 To 30
+        For i As Integer = 1 To mTotalGratingCount
             cbGrating.Items.Add(i)
         Next
         cbGrating.Text = 1
@@ -162,13 +163,24 @@ Public Class frmMain
         mSweepStartTime = Now
         mSweepInterval = mIniFile.ReadIni("Sweep", "TimeInterval", 2)
         mSaveInterval = mIniFile.ReadIni("Sweep", "TimeSaveInterval", 2)
+        Dim localPort = mIniFile.ReadIni("Net", "LocalSendPort", 9001)
+        mLocalSendPort = Convert.ToInt32(localPort)
+
+        mRemoteIp = mIniFile.ReadIni("Net", "RemoteIp", "192.168.1.100")
+        Dim remotePort = mIniFile.ReadIni("Net", "RemotePort ", 9002)
+        mRemotePort = Convert.ToInt32(remotePort)
+        Dim saveRaw = mIniFile.ReadIni("Sweep", "SaveRawData", 1)
+        mSaveRawData = (Convert.ToInt32(saveRaw) = 1)
+        mSavePath = mIniFile.ReadIni("Sweep", "LocalPath", "D://")
+
+
         mScanChannels = eChRange.EditValue
         mIsGroupQuery = iGroupQuery.EditValue
         If mScanChannels < 1 Then mScanChannels = 1
         'If mScanChannels > MaxChannelCount Then mScanChannels = MaxChannelCount
         MaxChannelCount = mScanChannels
 
-        mEntry.SetMaxChannelCount(MaxChannelCount)
+        'mEntry.SetMaxChannelCount(MaxChannelCount)
         ReDim mChannelRawData(MaxChannelCount - 1)
         ReDim mDemulatorData(MaxChannelCount - 1)
 
@@ -215,7 +227,12 @@ Public Class frmMain
             siInfo.Caption = "Sweep Running..."
             ChartWavelength.Series.Clear()
             timerSweep.Interval = 1000 * mSweepInterval
+
             timerSweep.Enabled = True
+
+            timerGatherData.Interval = 1000
+            timerGatherData.Enabled = True
+
             Return True
         End If
     End Function
@@ -294,10 +311,13 @@ Public Class frmMain
         SaveRawData()
     End Sub
 
+
     Private Sub timerSweep_Tick(sender As Object, e As EventArgs) Handles timerSweep.Tick
         Try
+
             Application.DoEvents()
             If Not mInstFBG.SweepDone Then Return
+            Dim curtime As DateTime = Now
 
             If mIsDebugMode Then
                 GetRawData()
@@ -305,11 +325,10 @@ Public Class frmMain
             Else
                 If mIsGroupQuery Then
                     GetWavelengthDataByGroup()
-                    mEntry.DataHanleEntry(mDemulatorData)
+                    mEntry.DataHanleEntry(mLocalSendPort, mRemoteIp, mRemotePort, curtime, mSaveRawData, mSavePath, mDemulatorData)
                 Else
                     GetWavelengthData()
-
-                    mEntry.DataHanleEntry(mDemulatorData)
+                    mEntry.DataHanleEntry(mLocalSendPort, mRemoteIp, mRemotePort, curtime, mSaveRawData, mSavePath, mDemulatorData)
                 End If
 
                 If iScanPower.EditValue Then
@@ -317,7 +336,6 @@ Public Class frmMain
                 End If
                 UpdateGrids()
             End If
-
         Catch ex As Exception
             timerSweep.Enabled = False
             MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -349,6 +367,10 @@ Public Class frmMain
             If d IsNot Nothing Then
                 mWavelength(i) = d.ToArray()
                 t = Now
+
+                If mDemulatorData(i).SampleTime.Count >= 10 Then
+                    mDemulatorData(i).SampleTime.RemoveAt(0)
+                End If
                 mDemulatorData(i).SampleTime.Add(t)
                 If mDemulatorData(i).GratingWavelength Is Nothing Then
                     ReDim mDemulatorData(i).GratingWavelength(mWavelength(i).Length - 1)
@@ -357,6 +379,10 @@ Public Class frmMain
                     Next
                 End If
                 For j As Integer = 0 To mWavelength(i).Length - 1
+                    If mDemulatorData(i).GratingWavelength(j).Count >= 10 Then
+                        mDemulatorData(i).GratingWavelength(j).RemoveAt(0)
+
+                    End If
                     mDemulatorData(i).GratingWavelength(j).Add(mWavelength(i)(j))
                 Next
             End If
@@ -386,12 +412,12 @@ Public Class frmMain
         Dim t As Date
 
         ' total 32 channels * 30 grating
-        mDemulatorData = mInstFBG.GetWavelengthByGroup()
+        mDemulatorData = mInstFBG.GetWavelengthByGroup(MaxChannelCount)
 
         For i As Integer = 0 To mDemulatorData.Count - 1
-            Dim d(29) As Double
+            Dim d(mTotalGratingCount - 1) As Double
             mWavelength(i) = d
-            For j As Integer = 0 To 29
+            For j As Integer = 0 To mTotalGratingCount - 1
                 mWavelength(i)(j) = mDemulatorData(i).GratingWavelength(j)(0)
             Next
         Next
@@ -403,7 +429,7 @@ Public Class frmMain
             Next
             cbChannel.Text = 1
             cbGrating.Items.Clear()
-            For i As Integer = 1 To 30
+            For i As Integer = 1 To mTotalGratingCount
                 cbGrating.Items.Add(i)
             Next
             cbGrating.Text = 1
@@ -434,7 +460,10 @@ Public Class frmMain
                     Next
                 End If
                 For j As Integer = 0 To mPower(i).Length - 1
-                    mDemulatorData(i).GratingPower(j).Add(mPower(i)(j))
+                    If mDemulatorData(i).GratingPower(j) IsNot Nothing Then
+                        mDemulatorData(i).GratingPower(j).Add(mPower(i)(j))
+                    End If
+
                 Next
             End If
         Next
@@ -557,7 +586,7 @@ Public Class frmMain
                 mSeriesPowerWavelength.Points.BeginUpdate()
                 For i As Integer = 0 To mDemulatorData(mChannel - 1).GratingWavelength.Count - 1
                     Dim lastIndex As Integer = mDemulatorData(mChannel - 1).GratingWavelength(i).Count - 1
-                    If mDemulatorData(mChannel - 1).GratingWavelength(i)(lastIndex) <> 0 Then
+                    If mDemulatorData(mChannel - 1).GratingWavelength(i)(lastIndex) <> 0 And mDemulatorData(mChannel - 1).GratingPower IsNot Nothing Then
                         mSeriesPowerWavelength.Points.Add(New SeriesPoint(mDemulatorData(mChannel - 1).GratingWavelength(i)(lastIndex), mDemulatorData(mChannel - 1).GratingPower(i)(lastIndex)))
                     End If
                 Next
@@ -627,7 +656,7 @@ Public Class frmMain
             For i As Integer = 1 To mScanChannels  'mWavelength.Length
                 Dim emptyChannel As Boolean = True
                 For j As Integer = 1 To mWavelength(i - 1).Length
-                    If mWavelength(i - 1)(j - 1) <> 0 Then
+                    If mWavelength(i - 1)(j - 1) <> 0 And mPower(i - 1) IsNot Nothing Then
                         emptyChannel = False
                         If iScanPower.EditValue Then
                             dtData.Rows.Add(i.ToString(), "Wave_" + j.ToString(), mWavelength(i - 1)(j - 1).ToString(), mPower(i - 1)(j - 1).ToString())
@@ -769,6 +798,11 @@ Public Class frmMain
         Dim csvRaw As csvWriter
         Dim i, j, k As Integer
 
+        If Not mSaveRawData Then
+            Return
+
+        End If
+
         Try
             If Now.Subtract(mLastSaveTime).TotalSeconds < mSaveInterval - 0.5 * mSweepInterval Then Return
 
@@ -807,7 +841,10 @@ Public Class frmMain
         Dim gratingCount As Integer
         Dim csvRaw As csvWriter
         Dim i, j, k As Integer
+        If Not mSaveRawData Then
+            Return
 
+        End If
         Try
             If Now.Subtract(mLastSaveTime).TotalSeconds < mSaveInterval - 0.5 * mSweepInterval Then Return
 
@@ -912,6 +949,14 @@ Public Class frmMain
 
     Private MaxChannelCount As Integer = 16
 
+    Private mLocalSendPort As Integer = 9001
+    Private mRemoteIp As String = "192.168.1.100"
+    Private mRemotePort As Integer = 9002
+
+    Private mTotalGratingCount = 30
+    Public mSaveRawData As Boolean = True
+    Public mSavePath As String
+
     Dim mEntry As New HandleEntry
 #End Region
 
@@ -936,6 +981,7 @@ Public Class frmMain
             Me.Refresh()
         End If
     End Sub
+
 
 End Class
 

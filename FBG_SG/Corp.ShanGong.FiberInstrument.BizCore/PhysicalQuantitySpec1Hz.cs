@@ -19,7 +19,7 @@ namespace Corp.ShanGong.FiberInstrument.BizCore
 
             if (channelData != null && channelData.Any())
             {
-                instance.CurrentTime = channelData.First().SampleTime.First();
+                instance.CurrentTime = channelData.First().SampleTime.Last();
 
                 var tempExValuePairs = TempExValuePairsSpec1Hz(channelData, calc);
 
@@ -34,7 +34,11 @@ namespace Corp.ShanGong.FiberInstrument.BizCore
             for (var i = 0; i < channelData.Length; i++)
             {
                 var gratingData = channelData[i];
-                for (var j = 0; j < gratingData.GratingCount; j++)
+                if (gratingData.GratingWavelength == null)
+                {
+                    continue;
+                }
+                for (var j = 0; j < gratingData.GratingWavelength.Length; j++)
                 {
                     var current = SensorConfigManager.GetConfigBy(i + 1, j + 1);
                     if (current != null && tempExValuePairs.ContainsKey(current.SensorId))
@@ -76,7 +80,7 @@ namespace Corp.ShanGong.FiberInstrument.BizCore
             {
                 var i = config.ChannelIndex - 1;
                 var j = config.SensorIndex - 1;
-                if (i < channelData.Length && j < channelData[i].GratingCount)
+                if (i < channelData.Length && j < channelData[i].GratingWavelength.Length)
                 {
                     QuantityValuePair pair = new QuantityValuePair();
 

@@ -72,7 +72,7 @@ namespace Corp.ShanGong.FiberInstrument.BizCore
             while (offset < data.Length)
             {
                 var buf = data.Skip(offset).Take(1000).ToArray();
-                await comm.SendDataAsync(buf, buf.Length);
+                var result = await comm.SendDataAsync(buf, buf.Length);
                 offset += buf.Length;
             }
         }

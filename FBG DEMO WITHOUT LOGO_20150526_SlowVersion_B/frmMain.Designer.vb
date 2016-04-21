@@ -33,19 +33,19 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.ArcOpt.SplashScreen1), True, True)
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
-        Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim PointSeriesLabel1 As DevExpress.XtraCharts.PointSeriesLabel = New DevExpress.XtraCharts.PointSeriesLabel()
-        Dim PointOptions1 As DevExpress.XtraCharts.PointOptions = New DevExpress.XtraCharts.PointOptions()
-        Dim PointSeriesView1 As DevExpress.XtraCharts.PointSeriesView = New DevExpress.XtraCharts.PointSeriesView()
-        Dim PointSeriesView2 As DevExpress.XtraCharts.PointSeriesView = New DevExpress.XtraCharts.PointSeriesView()
-        Dim SwiftPlotDiagram1 As DevExpress.XtraCharts.SwiftPlotDiagram = New DevExpress.XtraCharts.SwiftPlotDiagram()
-        Dim Series2 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim SwiftPlotSeriesView1 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
-        Dim Series3 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim SwiftPlotSeriesView2 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
-        Dim SwiftPlotSeriesView3 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
+        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim XyDiagram2 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
+        Dim Series4 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim PointSeriesLabel2 As DevExpress.XtraCharts.PointSeriesLabel = New DevExpress.XtraCharts.PointSeriesLabel()
+        Dim PointOptions2 As DevExpress.XtraCharts.PointOptions = New DevExpress.XtraCharts.PointOptions()
+        Dim PointSeriesView3 As DevExpress.XtraCharts.PointSeriesView = New DevExpress.XtraCharts.PointSeriesView()
+        Dim PointSeriesView4 As DevExpress.XtraCharts.PointSeriesView = New DevExpress.XtraCharts.PointSeriesView()
+        Dim SwiftPlotDiagram2 As DevExpress.XtraCharts.SwiftPlotDiagram = New DevExpress.XtraCharts.SwiftPlotDiagram()
+        Dim Series5 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim SwiftPlotSeriesView4 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
+        Dim Series6 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim SwiftPlotSeriesView5 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
+        Dim SwiftPlotSeriesView6 As DevExpress.XtraCharts.SwiftPlotSeriesView = New DevExpress.XtraCharts.SwiftPlotSeriesView()
         Me.splitContainerControl = New DevExpress.XtraEditors.SplitContainerControl()
         Me.navBarControl = New DevExpress.XtraNavBar.NavBarControl()
         Me.controlGroup = New DevExpress.XtraNavBar.NavBarGroup()
@@ -145,6 +145,7 @@ Partial Class frmMain
         Me.timerSaveData = New System.Windows.Forms.Timer(Me.components)
         Me.BarEditItem2 = New DevExpress.XtraBars.BarEditItem()
         Me.BarEditItem3 = New DevExpress.XtraBars.BarEditItem()
+        Me.timerGatherData = New System.Windows.Forms.Timer(Me.components)
         CType(Me.splitContainerControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerControl.SuspendLayout()
         CType(Me.navBarControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -178,18 +179,18 @@ Partial Class frmMain
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.ChartPower, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(PointSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(PointSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(PointSeriesView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(XyDiagram2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PointSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PointSeriesView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PointSeriesView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartWavelength, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SwiftPlotSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SwiftPlotSeriesView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SwiftPlotSeriesView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SwiftPlotDiagram2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SwiftPlotSeriesView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SwiftPlotSeriesView6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -590,6 +591,7 @@ Partial Class frmMain
         Me.eChRange.CausesValidation = True
         Me.eChRange.Edit = Me.RepositoryItemSpinEdit1
         Me.eChRange.EditHeight = 30
+        Me.eChRange.Enabled = False
         Me.eChRange.Id = 91
         Me.eChRange.Name = "eChRange"
         '
@@ -749,8 +751,8 @@ Partial Class frmMain
         Me.gcData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        GridLevelNode1.RelationName = "Level1"
-        Me.gcData.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode2.RelationName = "Level1"
+        Me.gcData.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.gcData.Location = New System.Drawing.Point(0, 218)
         Me.gcData.LookAndFeel.SkinName = "Visual Studio 2013 Blue"
         Me.gcData.LookAndFeel.UseDefaultLookAndFeel = False
@@ -1022,59 +1024,59 @@ Partial Class frmMain
         'ChartPower
         '
         Me.ChartPower.AppearanceNameSerializable = "Light"
-        XyDiagram1.AxisX.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        XyDiagram1.AxisX.Title.Text = "Wavelength (nm)"
-        XyDiagram1.AxisX.Title.Visible = True
-        XyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-        XyDiagram1.AxisY.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        XyDiagram1.AxisY.Title.Text = "Power (dBm)"
-        XyDiagram1.AxisY.Title.Visible = True
-        XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
-        Me.ChartPower.Diagram = XyDiagram1
+        XyDiagram2.AxisX.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        XyDiagram2.AxisX.Title.Text = "Wavelength (nm)"
+        XyDiagram2.AxisX.Title.Visible = True
+        XyDiagram2.AxisX.VisibleInPanesSerializable = "-1"
+        XyDiagram2.AxisY.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        XyDiagram2.AxisY.Title.Text = "Power (dBm)"
+        XyDiagram2.AxisY.Title.Visible = True
+        XyDiagram2.AxisY.VisibleInPanesSerializable = "-1"
+        Me.ChartPower.Diagram = XyDiagram2
         Me.ChartPower.Location = New System.Drawing.Point(12, 237)
         Me.ChartPower.Name = "ChartPower"
         Me.ChartPower.PaletteName = "Default"
-        PointSeriesLabel1.LineLength = 20
-        PointOptions1.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.FixedPoint
-        PointOptions1.ArgumentNumericOptions.Precision = 0
-        PointOptions1.Pattern = "{A} : {V}"
-        PointOptions1.PointView = DevExpress.XtraCharts.PointView.ArgumentAndValues
-        PointSeriesLabel1.PointOptions = PointOptions1
-        PointSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.JustifyAroundPoint
-        Series1.Label = PointSeriesLabel1
-        Series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
-        Series1.Name = "Series 1"
-        Series1.View = PointSeriesView1
-        Me.ChartPower.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
-        Me.ChartPower.SeriesTemplate.View = PointSeriesView2
+        PointSeriesLabel2.LineLength = 20
+        PointOptions2.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.FixedPoint
+        PointOptions2.ArgumentNumericOptions.Precision = 0
+        PointOptions2.Pattern = "{A} : {V}"
+        PointOptions2.PointView = DevExpress.XtraCharts.PointView.ArgumentAndValues
+        PointSeriesLabel2.PointOptions = PointOptions2
+        PointSeriesLabel2.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.JustifyAroundPoint
+        Series4.Label = PointSeriesLabel2
+        Series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
+        Series4.Name = "Series 1"
+        Series4.View = PointSeriesView3
+        Me.ChartPower.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series4}
+        Me.ChartPower.SeriesTemplate.View = PointSeriesView4
         Me.ChartPower.Size = New System.Drawing.Size(707, 217)
         Me.ChartPower.TabIndex = 4
         '
         'ChartWavelength
         '
-        SwiftPlotDiagram1.AxisX.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        SwiftPlotDiagram1.AxisX.Title.Text = "Time"
-        SwiftPlotDiagram1.AxisX.Title.Visible = True
-        SwiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-        SwiftPlotDiagram1.AxisY.Label.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.FixedPoint
-        SwiftPlotDiagram1.AxisY.Label.NumericOptions.Precision = 4
-        SwiftPlotDiagram1.AxisY.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        SwiftPlotDiagram1.AxisY.Title.Text = "Wavelength(nm)"
-        SwiftPlotDiagram1.AxisY.Title.Visible = True
-        SwiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1"
-        Me.ChartWavelength.Diagram = SwiftPlotDiagram1
+        SwiftPlotDiagram2.AxisX.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        SwiftPlotDiagram2.AxisX.Title.Text = "Time"
+        SwiftPlotDiagram2.AxisX.Title.Visible = True
+        SwiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1"
+        SwiftPlotDiagram2.AxisY.Label.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.FixedPoint
+        SwiftPlotDiagram2.AxisY.Label.NumericOptions.Precision = 4
+        SwiftPlotDiagram2.AxisY.Title.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        SwiftPlotDiagram2.AxisY.Title.Text = "Wavelength(nm)"
+        SwiftPlotDiagram2.AxisY.Title.Visible = True
+        SwiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1"
+        Me.ChartWavelength.Diagram = SwiftPlotDiagram2
         Me.ChartWavelength.Location = New System.Drawing.Point(12, 12)
         Me.ChartWavelength.Name = "ChartWavelength"
-        Series2.Name = "Series 1"
-        SwiftPlotSeriesView1.LineStyle.Thickness = 2
-        Series2.View = SwiftPlotSeriesView1
-        Series3.Name = "Series 2"
-        SwiftPlotSeriesView2.LineStyle.Thickness = 2
-        Series3.View = SwiftPlotSeriesView2
-        Series3.Visible = False
-        Me.ChartWavelength.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series2, Series3}
-        SwiftPlotSeriesView3.LineStyle.Thickness = 2
-        Me.ChartWavelength.SeriesTemplate.View = SwiftPlotSeriesView3
+        Series5.Name = "Series 1"
+        SwiftPlotSeriesView4.LineStyle.Thickness = 2
+        Series5.View = SwiftPlotSeriesView4
+        Series6.Name = "Series 2"
+        SwiftPlotSeriesView5.LineStyle.Thickness = 2
+        Series6.View = SwiftPlotSeriesView5
+        Series6.Visible = False
+        Me.ChartWavelength.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series5, Series6}
+        SwiftPlotSeriesView6.LineStyle.Thickness = 2
+        Me.ChartWavelength.SeriesTemplate.View = SwiftPlotSeriesView6
         Me.ChartWavelength.Size = New System.Drawing.Size(707, 221)
         Me.ChartWavelength.TabIndex = 0
         '
@@ -1147,6 +1149,9 @@ Partial Class frmMain
         Me.BarEditItem3.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate
         Me.BarEditItem3.Name = "BarEditItem3"
         '
+        'timerGatherData
+        '
+        '
         'frmMain
         '
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
@@ -1198,18 +1203,18 @@ Partial Class frmMain
         CType(Me.navbarImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(PointSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(PointSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(PointSeriesView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(XyDiagram2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PointSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PointSeriesView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PointSeriesView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartPower, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SwiftPlotSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SwiftPlotSeriesView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SwiftPlotSeriesView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SwiftPlotDiagram2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SwiftPlotSeriesView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SwiftPlotSeriesView6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartWavelength, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1319,5 +1324,6 @@ Partial Class frmMain
     Friend WithEvents iGroupQuery As DevExpress.XtraBars.BarEditItem
     Friend WithEvents RepositoryItemCheckEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents BarEditItem3 As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents timerGatherData As System.Windows.Forms.Timer
 
 End Class

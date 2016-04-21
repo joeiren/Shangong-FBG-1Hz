@@ -13,17 +13,28 @@ namespace SG.PhysicDataHandle
 {
     public class HandleEntry
     {
-        public void DataHanleEntry(ChannelDataStructure[] channelData)
+        public void DataHanleEntry(int localPort, string remoteIP, int remotePort, DateTime time, bool mSave, string savePath,ChannelDataStructure[] channelData)
         {
-            
+         
             Task.Run(() => new Action(async () =>
             {
-                GlobalSetting.Instance.SensorCount = 16;
+                GlobalSetting.Instance.ChannelWay = channelData.Length;
+                GlobalSetting.Instance.SensorCount = channelData.First().GratingWavelength.Length;
                 var data = PhysicalQuantity.LoadFrom(channelData, new PhysicalCalculatorSpecCSJM());
-                         
-                ReadIniConfig();
-                var send = new SendQuantityPackage(_localPort, _remoteIp, _remotePort, data);
+                data.CurrentTime = time;
+                //ReadIniConfig();
+                var send = new SendQuantityPackage(localPort, remoteIP, remotePort, data);
                 await send.SendData();
+                if (mSave)
+                {
+                    GlobalSetting.Instance.DataFileLocalPath = savePath;
+                    var dataArray = data.ToDataString();
+                    for(var i=0;i<dataArray.Length;i++)
+                    {
+                        StressDataFile.SaveByChannel(dataArray[i], i + 1);
+                    }
+                    
+                }
             })());
         }
 
@@ -42,7 +53,7 @@ namespace SG.PhysicDataHandle
             var port = OperateIniFile.ReadIniData("Net", "LocalPort", "9001", "System.ini");
             _localPort = string.IsNullOrEmpty(port) ? 0 : Convert.ToInt32(port);
 
-            _remoteIp = OperateIniFile.ReadIniData("Net", "RemoteIp", "", "System.ini");
+            _remoteIp = OperateIniFile.ReadIniData("Net", "RemoteIp", "192.168.1.100", "System.ini");
             var rePort = OperateIniFile.ReadIniData("Net", "RemotePort", "9000", "System.ini");
             _remotePort = string.IsNullOrEmpty(rePort) ? 0 : Convert.ToInt32(rePort);
  

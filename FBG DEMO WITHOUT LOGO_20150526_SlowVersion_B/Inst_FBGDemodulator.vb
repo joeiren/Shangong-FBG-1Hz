@@ -264,10 +264,10 @@ Namespace Opring.Instrument
 
         End Function
 
-        Public Function GetWavelengthByGroup() As ChannelDataStructure()
-            Dim mDemulatorData(31) As ChannelDataStructure
+        Public Function GetWavelengthByGroup(cCount As Integer) As ChannelDataStructure()
+            Dim mDemulatorData(cCount - 1) As ChannelDataStructure
             Dim GratingCount As Integer = 30
-            Dim ChannelCount As Integer = 32
+            Dim ChannelCount As Integer = cCount
             Dim response() As Byte
             Dim a1, a2, a3 As String
             Dim i, j As Integer
